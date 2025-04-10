@@ -1,84 +1,96 @@
-🎶 Melodify - AI-Powered Music Recommender System
-Melodify is an AI-driven content-based music recommender system designed to enhance music discovery through personalized song suggestions. It analyzes lyrics, artist attributes, and song features to generate accurate similarity scores between tracks, helping users explore music tailored to their tastes.
+# 🎶 Melodify - AI-Powered Music Recommender System
 
-🚀 Features
-Personalized Song Recommendations based on previously liked tracks.
+**Melodify** is an AI-driven content-based music recommender system designed to enhance music discovery through personalized song suggestions. It analyzes lyrics, artist attributes, and song features to generate accurate similarity scores between tracks, helping users explore music tailored to their tastes.
 
-Content-Based Filtering using audio features, lyrics, and artist metadata.
+---
 
-Multilingual Lyrics Support powered by XLM-RoBERTa for cross-language embedding.
+## 🚀 Features
 
-Rich Song Metadata including popularity, duration, danceability, energy, and more.
+- **Personalized Song Recommendations** based on previously liked tracks.
+- **Content-Based Filtering** using audio features, lyrics, and artist metadata.
+- **Multilingual Lyrics Support** powered by **XLM-RoBERTa** for cross-language embedding.
+- **Rich Song Metadata** including popularity, duration, danceability, energy, and more.
+- **Artist Profiling** through BERT embeddings, artist genres, and popularity.
+- **Custom Similarity Scoring Engine** using cosine similarity, inverse Manhattan distance, and feature weighting.
+- **Data Visualization** and feature transformation for improved model performance.
+- **Lyric Insights** using text embeddings for emotional and thematic analysis.
+- **25K+ Songs Dataset** with complete metadata from Spotify and lyrics scraped using multiple APIs and fallback scrapers.
 
-Artist Profiling through BERT embeddings, artist genres, and popularity.
+---
 
-Custom Similarity Scoring Engine using cosine similarity, inverse Manhattan distance, and feature weighting.
+## 🧠 Technology Stack
 
-Data Visualization and feature transformation for improved model performance.
+- **Languages & Libraries**: Python, Pandas, NumPy, scikit-learn
+- **APIs**: Spotify Web API, YTMusic API, Musixmatch, Tekstowo
+- **Embeddings**: XLM-RoBERTa, BERT Uncased, Sentence Transformers
+- **Web Scraping**: BeautifulSoup, Selenium
+- **Visualization**: Matplotlib, Seaborn
 
-Lyric Insights using text embeddings for emotional and thematic analysis.
+---
 
-25K+ Songs Dataset with complete metadata from Spotify and lyrics scraped using multiple APIs and fallback scrapers.
+## 📂 Feature Categories
 
-🧠 Technology Stack
-Python, Pandas, NumPy, scikit-learn
+### 🎵 Song Features
+- Name, Duration, Popularity, Explicit flag
+- Tempo, Danceability, Acousticness, Valence
+- Key, Mode, Energy, Loudness, Speechiness
 
-Spotify Web API, YTMusic API, Musixmatch, Tekstowo (for lyrics)
+### 📝 Lyrics Embedding
+- Collected and processed using **XLM-RoBERTa** for robust multilingual support.
 
-XLM-RoBERTa, BERT Uncased, Sentence Transformers
+### 👨‍🎤 Artist Features
+- Artist and Album embeddings
+- Genres, Popularity Score, Followers count
 
-BeautifulSoup, Selenium
+### 🌍 Language Detection
+- One-hot encoded language features for better multilingual matching.
 
-Matplotlib, Seaborn (for visualizations)
+---
 
-📂 Feature Categories
-🎵 Song Features
-Name, Duration, Popularity, Explicit flag
+## 🔍 Recommendation Logic
 
-Tempo, Danceability, Acousticness, Valence
+1. Preprocess metadata and generate embeddings.
+2. Apply manually defined weights to each feature group.
+3. Flatten feature vectors and compute similarity using:
+   - Cosine Similarity
+   - Inverse Manhattan Distance
+   - Equality Check
+4. Return top-N most similar tracks based on the aggregated similarity score.
 
-Key, Mode, Energy, Loudness, Speechiness
+---
 
-📝 Lyrics Embedding
-Collected and processed via XLM-RoBERTa for multilingual accuracy
+## ✅ Results
 
-👨‍🎤 Artist Features
-Artist and Album embeddings
+- High similarity scores across genres and artists.
+- Threshold-based accuracy validated through human testing.
+- Successfully handles multilingual and cross-genre recommendations.
 
-Artist genres, popularity, and follower count
+---
 
-🌍 Language Detection
-One-hot encoded languages to enhance culturally relevant recommendations
+## ⚠️ Challenges Faced
 
-🔍 Recommendation Logic
-Preprocess metadata and embeddings (lyrics, artist, and song features).
+- API limitations, especially for lyrics access.
+- Inconsistent data formats and scraping restrictions.
+- Handling duplicate tracks and varying metadata quality.
+- Data cleaning complexities for multilingual lyrics.
 
-Assign weights to features based on their relevance.
+---
 
-Flatten all features into a weighted vector space.
+## 🔮 Future Improvements
 
-Calculate similarity scores using:
+- Train a model to automatically learn feature weights.
+- Combine collaborative filtering with content-based filtering.
+- Include additional features like movie metadata for film-based songs.
 
-Cosine Similarity
+---
 
-Inverse Manhattan Distance
+## 👨‍💻 Built By
 
-Equality Checks
+**Team KVH**
+- Kanishk Jain  
+- Vishrut Grover  
+- Hemang Jain
 
-Recommend top-N most similar songs based on the final aggregated similarity score.
+---
 
-✅ Results
-High accuracy based on similarity threshold scoring.
-
-Human testing validates logical grouping of genres, moods, and energy levels.
-
-Successfully identified and recommended songs in different languages and genres.
-
-⚠️ Challenges Faced
-Limitations in API access (especially for lyrics).
-
-Scraping constraints on various platforms.
-
-Handling multilingual data with inconsistent formatting.
-
-Audio feature redundancies and data cleaning complexities.
+> Melodify is built with ❤️ for music lovers and developers who believe in smart recommendations.
