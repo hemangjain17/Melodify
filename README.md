@@ -74,23 +74,4 @@
 - Handling duplicate tracks and varying metadata quality.
 - Data cleaning complexities for multilingual lyrics.
 
----
 
-## 🔮 Future Improvements
-
-- Train a model to automatically learn feature weights.
-- Combine collaborative filtering with content-based filtering.
-- Include additional features like movie metadata for film-based songs.
-
----
-
-## 👨‍💻 Built By
-
-**Team KVH**
-- Kanishk Jain  
-- Vishrut Grover  
-- Hemang Jain
-
----
-
-> Melodify is built with ❤️ for music lovers and developers who believe in smart recommendations.
